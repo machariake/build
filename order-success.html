@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - MashupkGrid Technologies Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">MashupkGrid</a>
+                        <p class="text-xs text-gray-600">Technologies Mall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Success Icon and Message -->
+        <div class="text-center mb-8">
+            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-green-600 text-4xl"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Order Confirmed!</h1>
+            <p class="text-gray-600 text-lg">Thank you for your purchase. Your order has been successfully placed.</p>
+        </div>
+
+        <!-- Order Details Card -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Order Information -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Order Information</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Order Number:</span>
+                            <span id="order-number" class="font-semibold">Loading...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Order Date:</span>
+                            <span id="order-date" class="font-semibold">Loading...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Status:</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">Confirmed</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Estimated Delivery:</span>
+                            <span id="estimated-delivery" class="font-semibold">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Information -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Delivery Information</h3>
+                    <div id="delivery-address" class="text-gray-600">
+                        <!-- Address will be loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-lg font-semibold mb-6">Order Items</h3>
+            <div id="order-items" class="space-y-4">
+                <!-- Items will be loaded by JavaScript -->
+            </div>
+            
+            <!-- Order Total -->
+            <div class="border-t border-gray-200 mt-6 pt-6">
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>Subtotal:</span>
+                        <span id="order-subtotal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Shipping:</span>
+                        <span id="order-shipping">$0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Tax:</span>
+                        <span id="order-tax">$0.00</span>
+                    </div>
+                    <div class="border-t border-gray-200 pt-2 flex justify-between text-lg font-bold">
+                        <span>Total:</span>
+                        <span id="order-total">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What's Next Section -->
+        <div class="bg-blue-50 rounded-lg p-6 mb-8">
+            <h3 class="text-lg font-semibold text-blue-900 mb-4">What happens next?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">1</div>
+                    <div>
+                        <h4 class="font-medium text-blue-900">Order Processing</h4>
+                        <p class="text-blue-700 text-sm">We'll prepare your items for shipment</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">2</div>
+                    <div>
+                        <h4 class="font-medium text-blue-900">Shipping</h4>
+                        <p class="text-blue-700 text-sm">Your order will be shipped with tracking</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">3</div>
+                    <div>
+                        <h4 class="font-medium text-blue-900">Delivery</h4>
+                        <p class="text-blue-700 text-sm">Receive your items at your doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="printOrder()" class="bg-gray-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-700 transition duration-300">
+                <i class="fas fa-print mr-2"></i>Print Order
+            </button>
+            <a href="index.html" class="bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center">
+                <i class="fas fa-home mr-2"></i>Continue Shopping
+            </a>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="text-center mt-8 text-gray-600">
+            <p class="mb-2">Questions about your order?</p>
+            <p>
+                <i class="fas fa-envelope mr-2"></i>Email: support@mashupkgrid.com
+                <span class="mx-4">|</span>
+                <i class="fas fa-phone mr-2"></i>Phone: +254 700 000 000
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/order-success.js"></script>
+</body>
+</html>

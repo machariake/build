@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - MashupkGrid Technologies Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">MashupkGrid</a>
+                        <p class="text-xs text-gray-600">Technologies Mall</p>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center flex-1 max-w-lg mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="search-input" placeholder="Search for tech gadgets, accessories..." 
+                               class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Cart and Menu -->
+                <div class="flex items-center space-x-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-blue-700">Home</a>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+                <a href="products.html" class="text-primary hover:text-blue-700">Products</a>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+                <span id="breadcrumb-product" class="text-gray-600">Product</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div id="product-details" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Product will be loaded by JavaScript -->
+        </div>
+
+        <!-- Product Description & Reviews -->
+        <div class="mt-16">
+            <div class="border-b border-gray-200">
+                <nav class="-mb-px flex space-x-8">
+                    <button id="description-tab" class="py-4 px-1 border-b-2 border-primary text-primary font-medium">
+                        Description
+                    </button>
+                    <button id="reviews-tab" class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                        Reviews (<span id="reviews-count">0</span>)
+                    </button>
+                    <button id="shipping-tab" class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                        Shipping & Returns
+                    </button>
+                </nav>
+            </div>
+
+            <div class="mt-8">
+                <!-- Description Tab -->
+                <div id="description-content" class="tab-content">
+                    <div class="prose max-w-none">
+                        <p id="product-full-description" class="text-gray-600 leading-relaxed">
+                            <!-- Product description will be loaded by JavaScript -->
+                        </p>
+                        <h4 class="text-lg font-semibold mt-6 mb-3">Key Features:</h4>
+                        <ul id="product-features" class="list-disc list-inside text-gray-600 space-y-1">
+                            <!-- Features will be loaded by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews-content" class="tab-content hidden">
+                    <div id="reviews-list" class="space-y-6">
+                        <!-- Reviews will be loaded by JavaScript -->
+                    </div>
+                    
+                    <!-- Add Review Form -->
+                    <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4">Write a Review</h4>
+                        <form id="review-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <input type="text" placeholder="Your Name" required 
+                                       class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm font-medium">Rating:</span>
+                                    <div class="flex space-x-1" id="rating-stars">
+                                        <i class="fas fa-star text-gray-300 cursor-pointer" data-rating="1"></i>
+                                        <i class="fas fa-star text-gray-300 cursor-pointer" data-rating="2"></i>
+                                        <i class="fas fa-star text-gray-300 cursor-pointer" data-rating="3"></i>
+                                        <i class="fas fa-star text-gray-300 cursor-pointer" data-rating="4"></i>
+                                        <i class="fas fa-star text-gray-300 cursor-pointer" data-rating="5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea placeholder="Write your review..." rows="4" required
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary mb-4"></textarea>
+                            <button type="submit" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                                Submit Review
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Shipping Tab -->
+                <div id="shipping-content" class="tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Shipping Information</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-truck text-primary mr-2"></i> Free shipping on orders over $50</li>
+                                <li><i class="fas fa-clock text-primary mr-2"></i> Standard delivery: 3-5 business days</li>
+                                <li><i class="fas fa-shipping-fast text-primary mr-2"></i> Express delivery: 1-2 business days</li>
+                                <li><i class="fas fa-map-marker-alt text-primary mr-2"></i> Nationwide delivery available</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Return Policy</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-undo text-primary mr-2"></i> 30-day return policy</li>
+                                <li><i class="fas fa-shield-alt text-primary mr-2"></i> Items must be in original condition</li>
+                                <li><i class="fas fa-money-bill-wave text-primary mr-2"></i> Full refund or exchange</li>
+                                <li><i class="fas fa-headset text-primary mr-2"></i> 24/7 customer support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-bold mb-8">Related Products</h3>
+            <div id="related-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Related products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="border-t pt-4 mt-6">
+                <div class="flex justify-between text-xl font-bold mb-4">
+                    <span>Total: </span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

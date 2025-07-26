@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MashupkGrid Technologies Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">MashupkGrid</a>
+                        <p class="text-xs text-gray-600">Technologies Mall</p>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center flex-1 max-w-lg mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="search-input" placeholder="Search for tech gadgets, accessories..." 
+                               class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="flex items-center space-x-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-blue-700">Home</a>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+                <span class="text-gray-600">About Us</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">About MashupkGrid Technologies Mall</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Your trusted destination for cutting-edge technology products, exceptional service, and unbeatable value.
+            </p>
+        </div>
+
+        <!-- Our Story -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed">
+                    <p>
+                        Founded in 2020, MashupkGrid Technologies Mall began as a vision to make high-quality technology 
+                        accessible to everyone. What started as a small tech enthusiast's dream has grown into one of 
+                        Kenya's most trusted online technology retailers.
+                    </p>
+                    <p>
+                        We understand that technology evolves rapidly, and staying up-to-date can be challenging and expensive. 
+                        That's why we've made it our mission to provide the latest tech gadgets, accessories, and components 
+                        at prices that won't break the bank.
+                    </p>
+                    <p>
+                        From humble beginnings in a small office in Nairobi, we've expanded our operations to serve customers 
+                        across Kenya, offering everything from the latest laptops and smartphones to specialized networking 
+                        equipment and electronic accessories.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Our Team" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+
+        <!-- Our Mission & Vision -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="text-primary text-4xl mb-4">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    To democratize access to technology by providing high-quality tech products at affordable prices, 
+                    backed by exceptional customer service and fast, reliable delivery across Kenya.
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="text-primary text-4xl mb-4">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    To become East Africa's leading online technology marketplace, empowering individuals and businesses 
+                    with the tools they need to thrive in the digital age.
+                </p>
+            </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Trust & Integrity</h3>
+                    <p class="text-gray-600">
+                        We believe in honest business practices, transparent pricing, and building long-term relationships 
+                        with our customers based on trust.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Quality Excellence</h3>
+                    <p class="text-gray-600">
+                        Every product we sell is carefully selected and tested to ensure it meets our high standards 
+                        for quality and performance.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Customer Focus</h3>
+                    <p class="text-gray-600">
+                        Our customers are at the heart of everything we do. We strive to exceed expectations in 
+                        service, support, and satisfaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="bg-gray-100 rounded-lg p-8 mb-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Why Choose MashupkGrid?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <i class="fas fa-shipping-fast text-primary text-3xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">Fast Delivery</h4>
+                    <p class="text-gray-600 text-sm">Same-day delivery in Nairobi, nationwide shipping</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-primary text-3xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">Warranty Support</h4>
+                    <p class="text-gray-600 text-sm">Comprehensive warranty on all products</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-headset text-primary text-3xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">24/7 Support</h4>
+                    <p class="text-gray-600 text-sm">Round-the-clock customer service</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-dollar-sign text-primary text-3xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">Best Prices</h4>
+                    <p class="text-gray-600 text-sm">Competitive pricing with regular deals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="John Doe" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold mb-2">John Macharia</h3>
+                    <p class="text-primary mb-2">Founder & CEO</p>
+                    <p class="text-gray-600 text-sm">
+                        Tech entrepreneur with over 10 years of experience in the technology retail industry.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612c95e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Jane Smith" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold mb-2">Sarah Wanjiku</h3>
+                    <p class="text-primary mb-2">Head of Operations</p>
+                    <p class="text-gray-600 text-sm">
+                        Operations expert ensuring smooth delivery and customer satisfaction across all touchpoints.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                         alt="Mike Johnson" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold mb-2">David Kipchoge</h3>
+                    <p class="text-primary mb-2">Technical Director</p>
+                    <p class="text-gray-600 text-sm">
+                        Technology specialist with deep expertise in product selection and technical support.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="bg-primary text-white rounded-lg p-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Experience the Difference?</h2>
+            <p class="text-xl mb-6">Join thousands of satisfied customers who trust MashupkGrid for their technology needs.</p>
+            <a href="products.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                Shop Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="border-t pt-4 mt-6">
+                <div class="flex justify-between text-xl font-bold mb-4">
+                    <span>Total: </span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

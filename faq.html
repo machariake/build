@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - MashupkGrid Technologies Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">MashupkGrid</a>
+                        <p class="text-xs text-gray-600">Technologies Mall</p>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center flex-1 max-w-lg mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="search-input" placeholder="Search for tech gadgets, accessories..." 
+                               class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="flex items-center space-x-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-blue-700">Home</a>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+                <span class="text-gray-600">FAQ</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-600">
+                Find answers to common questions about our products, services, and policies.
+            </p>
+        </div>
+
+        <!-- Search FAQ -->
+        <div class="mb-8">
+            <div class="relative">
+                <input type="text" id="faq-search" placeholder="Search FAQs..." 
+                       class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="mb-8">
+            <div class="flex flex-wrap gap-2">
+                <button class="faq-category-btn bg-primary text-white px-4 py-2 rounded-lg" data-category="all">All</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="orders">Orders</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="shipping">Shipping</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="payments">Payments</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="returns">Returns</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="technical">Technical</button>
+                <button class="faq-category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-category="account">Account</button>
+            </div>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4" id="faq-container">
+            <!-- Orders Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="orders">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">How do I place an order?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You'll need to provide your delivery information and choose a payment method. Once confirmed, you'll receive an order confirmation email.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="orders">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Can I modify or cancel my order?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>You can modify or cancel your order within 1 hour of placing it. After that, if the order hasn't been processed, please contact our customer service team immediately. Once an order is dispatched, modifications are not possible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="orders">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">How can I track my order?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Once your order is dispatched, you'll receive a tracking number via SMS and email. You can use this number to track your package on our website or through our delivery partner's tracking system.</p>
+                </div>
+            </div>
+
+            <!-- Shipping Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="shipping">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">What are your delivery areas?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>We deliver nationwide across Kenya. Same-day delivery is available within Nairobi, while other areas receive delivery within 1-3 business days depending on the location.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="shipping">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Do you offer free shipping?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Yes! We offer free standard shipping on orders above KSh 5,000. For orders below this amount, standard shipping fees apply. Express and overnight delivery options are available at additional cost.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="shipping">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">What if I'm not available for delivery?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Our delivery team will attempt to contact you before delivery. If you're not available, they'll try to deliver the next business day. You can also arrange a convenient delivery time by contacting our customer service.</p>
+                </div>
+            </div>
+
+            <!-- Payments Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="payments">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">What payment methods do you accept?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>We accept multiple payment methods including M-Pesa, Visa, MasterCard, bank transfers, and cash on delivery. All online payments are processed securely through encrypted channels.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="payments">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Is it safe to pay online?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Absolutely! We use industry-standard SSL encryption to protect your payment information. We're also PCI DSS compliant, ensuring your credit card details are handled securely.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="payments">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">When will I be charged for my order?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>For online payments, you'll be charged immediately upon order confirmation. For cash on delivery orders, payment is collected when the order is delivered to your address.</p>
+                </div>
+            </div>
+
+            <!-- Returns Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="returns">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">What is your return policy?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>We offer a 30-day return policy for unused items in their original packaging. The item must be in the same condition as received, with all accessories and documentation included.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="returns">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">How do I initiate a return?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Contact our customer service team with your order number and reason for return. We'll provide you with return instructions and a return shipping label if applicable.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="returns">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">When will I receive my refund?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Refunds are processed within 3-5 business days after we receive the returned item. The refund will be credited to your original payment method.</p>
+                </div>
+            </div>
+
+            <!-- Technical Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="technical">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Do you provide technical support?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Yes, we provide technical support for all products we sell. Our technical team is available 24/7 via phone, email, or live chat to help with setup, troubleshooting, and general technical questions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="technical">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Do you offer installation services?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>We offer installation services for certain products like networking equipment, smart home devices, and computer hardware. Contact us for availability and pricing in your area.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="technical">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">What if a product is defective?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>If you receive a defective product, contact us immediately. We'll arrange for a replacement or repair under warranty. All products come with manufacturer warranty, and we also offer extended warranty options.</p>
+                </div>
+            </div>
+
+            <!-- Account Category -->
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="account">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">Do I need to create an account to shop?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>While you can shop as a guest, creating an account allows you to track orders, save addresses, view order history, and receive personalized recommendations and exclusive offers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="account">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">How do I reset my password?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Click on "Forgot Password" on the login page and enter your email address. You'll receive a password reset link via email. Follow the instructions to create a new password.</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-category="account">
+                <button class="faq-question w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                    <span class="font-semibold text-lg">How do I update my account information?</span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                    <p>Log into your account and go to "Account Settings" where you can update your personal information, addresses, phone number, and communication preferences.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Still Have Questions -->
+        <div class="mt-16 bg-primary text-white rounded-lg p-8 text-center">
+            <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
+            <p class="text-lg mb-6">Our customer service team is here to help!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Contact Us
+                </a>
+                <a href="tel:+254700000000" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="border-t pt-4 mt-6">
+                <div class="flex justify-between text-xl font-bold mb-4">
+                    <span>Total: </span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle current answer
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Category filtering
+            document.querySelectorAll('.faq-category-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update button states
+                    document.querySelectorAll('.faq-category-btn').forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    this.classList.add('bg-primary', 'text-white');
+                    
+                    // Filter FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            document.getElementById('faq-search').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
