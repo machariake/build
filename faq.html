@@ -4,20 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - MashupkGrid Technologies Mall</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#3B82F6',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/tailwind-custom.css">
+    <link rel="stylesheet" href="css/custom-config.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Header -->
@@ -327,61 +316,6 @@
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
     <script src="js/main.js"></script>
-    <script>
-        // FAQ functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // FAQ accordion
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const icon = this.querySelector('i');
-                    
-                    // Toggle current answer
-                    answer.classList.toggle('hidden');
-                    icon.classList.toggle('rotate-180');
-                });
-            });
-
-            // Category filtering
-            document.querySelectorAll('.faq-category-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    
-                    // Update button states
-                    document.querySelectorAll('.faq-category-btn').forEach(btn => {
-                        btn.classList.remove('bg-primary', 'text-white');
-                        btn.classList.add('bg-gray-200', 'text-gray-700');
-                    });
-                    this.classList.remove('bg-gray-200', 'text-gray-700');
-                    this.classList.add('bg-primary', 'text-white');
-                    
-                    // Filter FAQ items
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        if (category === 'all' || item.getAttribute('data-category') === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Search functionality
-            document.getElementById('faq-search').addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    const question = item.querySelector('.faq-question span').textContent.toLowerCase();
-                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                    
-                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="css/custom-config.css">
 </body>
 </html>

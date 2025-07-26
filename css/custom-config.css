@@ -1,0 +1,29 @@
+/* Custom TailwindCSS configuration styles */
+
+/* Custom color definitions */
+:root {
+  --primary: #1E3A8A;
+  --secondary: #3B82F6;
+}
+
+/* Override any existing primary/secondary color classes */
+.bg-primary { background-color: var(--primary) !important; }
+.text-primary { color: var(--primary) !important; }
+.border-primary { border-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.border-secondary { border-color: var(--secondary) !important; }
+
+/* Focus ring for primary color */
+.focus\:ring-primary:focus {
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.5) !important;
+}
+
+/* Hover states for primary color */
+.hover\:bg-primary:hover {
+  background-color: #1e40af !important;
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary) !important;
+}
