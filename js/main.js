@@ -50,14 +50,14 @@ const categories = [
     }
 ];
 
-// Sample Products Data
+// Sample Products Data - Prices in Kenyan Shillings (KSH)
 const products = [
     {
         id: 1,
         name: 'MacBook Pro M2',
         category: 'laptops',
-        price: 1299.99,
-        originalPrice: 1499.99,
+        price: 188499,
+        originalPrice: 217499,
         image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.8,
         reviews: 156,
@@ -69,8 +69,8 @@ const products = [
         id: 2,
         name: 'TP-Link WiFi 6 Router',
         category: 'wifi-routers',
-        price: 89.99,
-        originalPrice: 119.99,
+        price: 13049,
+        originalPrice: 17399,
         image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.5,
         reviews: 89,
@@ -82,8 +82,8 @@ const products = [
         id: 3,
         name: 'iPhone 14 Case',
         category: 'mobile-accessories',
-        price: 24.99,
-        originalPrice: 34.99,
+        price: 3624,
+        originalPrice: 5074,
         image: 'https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.3,
         reviews: 234,
@@ -95,8 +95,8 @@ const products = [
         id: 4,
         name: 'USB-C Fast Charger',
         category: 'chargers',
-        price: 19.99,
-        originalPrice: 29.99,
+        price: 2899,
+        originalPrice: 4349,
         image: 'https://images.unsplash.com/photo-1609968066071-a8b9b4c30b54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.6,
         reviews: 178,
@@ -108,8 +108,8 @@ const products = [
         id: 5,
         name: 'Cat6 Ethernet Cable',
         category: 'ethernet-cables',
-        price: 12.99,
-        originalPrice: 18.99,
+        price: 1884,
+        originalPrice: 2754,
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.4,
         reviews: 67,
@@ -121,8 +121,8 @@ const products = [
         id: 6,
         name: 'Smart LED Bulb',
         category: 'electronics',
-        price: 15.99,
-        originalPrice: 22.99,
+        price: 2319,
+        originalPrice: 3334,
         image: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.2,
         reviews: 145,
@@ -134,8 +134,8 @@ const products = [
         id: 7,
         name: 'DDR4 16GB RAM',
         category: 'storage',
-        price: 79.99,
-        originalPrice: 99.99,
+        price: 11599,
+        originalPrice: 14499,
         image: 'https://images.unsplash.com/photo-1562976540-9c0bc4c4b4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.7,
         reviews: 92,
@@ -147,8 +147,8 @@ const products = [
         id: 8,
         name: 'MikroTik hEX S',
         category: 'mikrotik',
-        price: 69.99,
-        originalPrice: 89.99,
+        price: 10149,
+        originalPrice: 13049,
         image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         rating: 4.9,
         reviews: 43,
@@ -160,6 +160,11 @@ const products = [
 
 // Shopping Cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Currency formatting function for KSH
+function formatPrice(amount) {
+    return `KSH ${amount.toLocaleString()}`;
+}
 
 // DOM Elements
 const cartBtn = document.getElementById('cart-btn');
@@ -226,9 +231,9 @@ function renderFeaturedProducts() {
                 </div>
                 <div class="flex items-center justify-between mb-3">
                     <div>
-                        <span class="text-2xl font-bold text-primary">$${product.price}</span>
+                        <span class="text-2xl font-bold text-primary">${formatPrice(product.price)}</span>
                         ${product.originalPrice > product.price ? 
-                            `<span class="text-gray-500 line-through text-sm ml-2">$${product.originalPrice}</span>` : ''
+                            `<span class="text-gray-500 line-through text-sm ml-2">${formatPrice(product.originalPrice)}</span>` : ''
                         }
                     </div>
                 </div>
@@ -324,7 +329,7 @@ function updateCartUI() {
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     cartCount.textContent = totalItems;
-    cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+    cartTotal.textContent = formatPrice(totalPrice);
     
     renderCartItems();
 }
@@ -340,7 +345,7 @@ function renderCartItems() {
             <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
             <div class="flex-1">
                 <h4 class="font-semibold">${item.name}</h4>
-                <p class="text-primary font-bold">$${item.price}</p>
+                <p class="text-primary font-bold">${formatPrice(item.price)}</p>
             </div>
             <div class="flex items-center space-x-2">
                 <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})" 
