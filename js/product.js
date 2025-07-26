@@ -2,6 +2,11 @@
 let currentProduct = null;
 let selectedRating = 0;
 
+// Helper function to format KSh prices
+function formatKshPrice(price) {
+    return `KSh ${price.toLocaleString()}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     loadProductDetails();
     setupProductEventListeners();
@@ -94,9 +99,9 @@ function renderProductDetails() {
             <!-- Price -->
             <div class="border-b border-gray-200 pb-6">
                 <div class="flex items-end space-x-4">
-                    <span class="text-4xl font-bold text-primary">$${currentProduct.price}</span>
+                    <span class="text-4xl font-bold text-primary">${formatKshPrice(currentProduct.price)}</span>
                     ${currentProduct.originalPrice > currentProduct.price ? 
-                        `<span class="text-2xl text-gray-500 line-through">$${currentProduct.originalPrice}</span>
+                        `<span class="text-2xl text-gray-500 line-through">${formatKshPrice(currentProduct.originalPrice)}</span>
                          <span class="bg-red-500 text-white px-2 py-1 text-sm rounded">
                             ${Math.round((1 - currentProduct.price / currentProduct.originalPrice) * 100)}% OFF
                          </span>` : ''
@@ -157,7 +162,7 @@ function renderProductDetails() {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div class="flex items-center">
                         <i class="fas fa-truck text-primary mr-2"></i>
-                        <span>Free shipping on orders over $50</span>
+                        <span>Free shipping on orders over KSh 5000</span>
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-undo text-primary mr-2"></i>
@@ -281,9 +286,9 @@ function loadRelatedProducts() {
                 </div>
                 <div class="flex items-center justify-between mb-3">
                     <div>
-                        <span class="text-xl font-bold text-primary">$${product.price}</span>
+                        <span class="text-xl font-bold text-primary">${formatKshPrice(product.price)}</span>
                         ${product.originalPrice > product.price ? 
-                            `<span class="text-gray-500 line-through text-sm ml-2">$${product.originalPrice}</span>` : ''
+                            `<span class="text-gray-500 line-through text-sm ml-2">${formatKshPrice(product.originalPrice)}</span>` : ''
                         }
                     </div>
                 </div>

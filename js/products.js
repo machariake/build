@@ -1,4 +1,9 @@
 // Products page functionality
+// Helper function to format KSh prices
+function formatKshPrice(price) {
+    return `KSh ${price.toLocaleString()}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     loadProductsPage();
     setupProductsEventListeners();
@@ -139,9 +144,9 @@ function renderProductCard(product) {
                 </div>
                 <div class="flex items-center justify-between mb-3">
                     <div>
-                        <span class="text-2xl font-bold text-primary">$${product.price}</span>
+                        <span class="text-2xl font-bold text-primary">${formatKshPrice(product.price)}</span>
                         ${product.originalPrice > product.price ? 
-                            `<span class="text-gray-500 line-through text-sm ml-2">$${product.originalPrice}</span>` : ''
+                            `<span class="text-gray-500 line-through text-sm ml-2">${formatKshPrice(product.originalPrice)}</span>` : ''
                         }
                     </div>
                     <span class="text-sm ${product.inStock ? 'text-green-600' : 'text-red-600'}">
@@ -192,9 +197,9 @@ function renderProductListItem(product) {
                     </div>
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-3xl font-bold text-primary">$${product.price}</span>
+                            <span class="text-3xl font-bold text-primary">${formatKshPrice(product.price)}</span>
                             ${product.originalPrice > product.price ? 
-                                `<span class="text-gray-500 line-through text-lg ml-2">$${product.originalPrice}</span>` : ''
+                                `<span class="text-gray-500 line-through text-lg ml-2">${formatKshPrice(product.originalPrice)}</span>` : ''
                             }
                         </div>
                         <div class="flex space-x-3">
@@ -265,14 +270,14 @@ function applyFilters() {
     // Price filters
     const selectedPriceRange = document.querySelector('input[name="price"]:checked').value;
     if (selectedPriceRange !== 'all') {
-        if (selectedPriceRange === '0-25') {
-            filtered = filtered.filter(product => product.price >= 0 && product.price <= 25);
-        } else if (selectedPriceRange === '25-100') {
-            filtered = filtered.filter(product => product.price > 25 && product.price <= 100);
-        } else if (selectedPriceRange === '100-500') {
-            filtered = filtered.filter(product => product.price > 100 && product.price <= 500);
-        } else if (selectedPriceRange === '500+') {
-            filtered = filtered.filter(product => product.price > 500);
+        if (selectedPriceRange === '0-2500') {
+            filtered = filtered.filter(product => product.price >= 0 && product.price <= 2500);
+        } else if (selectedPriceRange === '2500-10000') {
+            filtered = filtered.filter(product => product.price > 2500 && product.price <= 10000);
+        } else if (selectedPriceRange === '10000-50000') {
+            filtered = filtered.filter(product => product.price > 10000 && product.price <= 50000);
+        } else if (selectedPriceRange === '50000+') {
+            filtered = filtered.filter(product => product.price > 50000);
         }
     }
     

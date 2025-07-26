@@ -1,4 +1,9 @@
 // Order success page functionality
+// Helper function to format KSh prices
+function formatKshPrice(price) {
+    return `KSh ${price.toLocaleString()}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     loadOrderDetails();
 });
@@ -58,19 +63,19 @@ function renderOrderDetails(order) {
             <div class="flex-1">
                 <h4 class="font-semibold">${item.name}</h4>
                 <p class="text-gray-600">Quantity: ${item.quantity}</p>
-                <p class="text-primary font-semibold">$${item.price} each</p>
+                <p class="text-primary font-semibold">${formatKshPrice(item.price)} each</p>
             </div>
             <div class="text-right">
-                <p class="font-bold text-lg">$${(item.price * item.quantity).toFixed(2)}</p>
+                <p class="font-bold text-lg">${formatKshPrice(item.price * item.quantity)}</p>
             </div>
         </div>
     `).join('');
     
     // Update order totals
-    document.getElementById('order-subtotal').textContent = `$${order.totals.subtotal.toFixed(2)}`;
-    document.getElementById('order-shipping').textContent = order.totals.shipping === 0 ? 'Free' : `$${order.totals.shipping.toFixed(2)}`;
-    document.getElementById('order-tax').textContent = `$${order.totals.tax.toFixed(2)}`;
-    document.getElementById('order-total').textContent = `$${order.totals.total.toFixed(2)}`;
+    document.getElementById('order-subtotal').textContent = formatKshPrice(order.totals.subtotal);
+    document.getElementById('order-shipping').textContent = order.totals.shipping === 0 ? 'Free' : formatKshPrice(order.totals.shipping);
+    document.getElementById('order-tax').textContent = formatKshPrice(order.totals.tax);
+    document.getElementById('order-total').textContent = formatKshPrice(order.totals.total);
 }
 
 function getShippingDays(method) {

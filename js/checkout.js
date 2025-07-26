@@ -1,4 +1,9 @@
 // Checkout page functionality
+// Helper function to format KSh prices
+function formatKshPrice(price) {
+    return `KSh ${price.toLocaleString()}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeCheckout();
     setupCheckoutEventListeners();
@@ -50,7 +55,7 @@ function renderCheckoutItems() {
                 <p class="text-gray-600 text-sm">Qty: ${item.quantity}</p>
             </div>
             <div class="text-right">
-                <p class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</p>
+                <p class="font-semibold">${formatKshPrice(item.price * item.quantity)}</p>
             </div>
         </div>
     `).join('');
@@ -62,10 +67,10 @@ function updateShippingCost(shippingMethod) {
             shippingCost = 0;
             break;
         case 'express':
-            shippingCost = 9.99;
+            shippingCost = 999;
             break;
         case 'overnight':
-            shippingCost = 19.99;
+            shippingCost = 1999;
             break;
         default:
             shippingCost = 0;
@@ -77,10 +82,10 @@ function updateOrderSummary() {
     const tax = subtotal * taxRate;
     const total = subtotal + shippingCost + tax;
     
-    document.getElementById('checkout-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('checkout-shipping').textContent = shippingCost === 0 ? 'Free' : `$${shippingCost.toFixed(2)}`;
-    document.getElementById('checkout-tax').textContent = `$${tax.toFixed(2)}`;
-    document.getElementById('checkout-total').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('checkout-subtotal').textContent = formatKshPrice(subtotal);
+    document.getElementById('checkout-shipping').textContent = shippingCost === 0 ? 'Free' : formatKshPrice(shippingCost);
+    document.getElementById('checkout-tax').textContent = formatKshPrice(tax);
+    document.getElementById('checkout-total').textContent = formatKshPrice(total);
 }
 
 function showPaymentDetails(paymentMethod) {
