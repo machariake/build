@@ -4,20 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Privacy - MashupkGrid Technologies Mall</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#3B82F6',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/tailwind-custom.css">
+    <link rel="stylesheet" href="css/custom-config.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Header -->
@@ -326,38 +315,6 @@
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
     <script src="js/main.js"></script>
-    <script>
-        // Tab switching functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const termsTab = document.getElementById('terms-tab');
-            const privacyTab = document.getElementById('privacy-tab');
-            const termsContent = document.getElementById('terms-content');
-            const privacyContent = document.getElementById('privacy-content');
-
-            termsTab.addEventListener('click', function() {
-                // Update tabs
-                termsTab.classList.remove('border-transparent', 'text-gray-500');
-                termsTab.classList.add('border-primary', 'text-primary');
-                privacyTab.classList.remove('border-primary', 'text-primary');
-                privacyTab.classList.add('border-transparent', 'text-gray-500');
-
-                // Update content
-                termsContent.classList.remove('hidden');
-                privacyContent.classList.add('hidden');
-            });
-
-            privacyTab.addEventListener('click', function() {
-                // Update tabs
-                privacyTab.classList.remove('border-transparent', 'text-gray-500');
-                privacyTab.classList.add('border-primary', 'text-primary');
-                termsTab.classList.remove('border-primary', 'text-primary');
-                termsTab.classList.add('border-transparent', 'text-gray-500');
-
-                // Update content
-                privacyContent.classList.remove('hidden');
-                termsContent.classList.add('hidden');
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="css/custom-config.css">
 </body>
 </html>

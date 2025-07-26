@@ -4,20 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - MashupkGrid Technologies Mall</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#3B82F6',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/tailwind-custom.css">
+    <link rel="stylesheet" href="css/custom-config.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Header -->
@@ -323,28 +312,6 @@
     <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
     <script src="js/main.js"></script>
-    <script>
-        // Contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            const button = e.target.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-            button.classList.remove('bg-primary', 'hover:bg-blue-700');
-            button.classList.add('bg-green-500');
-            button.disabled = true;
-            
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                e.target.reset();
-                button.innerHTML = originalText;
-                button.classList.remove('bg-green-500');
-                button.classList.add('bg-primary', 'hover:bg-blue-700');
-                button.disabled = false;
-            }, 3000);
-        });
-    </script>
+    <link rel="stylesheet" href="css/custom-config.css">
 </body>
 </html>
