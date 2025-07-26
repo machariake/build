@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Privacy - MashupkGrid Technologies Mall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">MashupkGrid</a>
+                        <p class="text-xs text-gray-600">Technologies Mall</p>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center flex-1 max-w-lg mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="search-input" placeholder="Search for tech gadgets, accessories..." 
+                               class="w-full px-4 py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Cart -->
+                <div class="flex items-center space-x-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-blue-700">Home</a>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+                <span class="text-gray-600">Terms & Privacy</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Terms & Privacy Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Terms of Service & Privacy Policy</h1>
+            <p class="text-lg text-gray-600">
+                Last updated: January 1, 2024
+            </p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="border-b border-gray-200 mb-8">
+            <nav class="-mb-px flex space-x-8">
+                <button id="terms-tab" class="py-4 px-1 border-b-2 border-primary text-primary font-medium">
+                    Terms of Service
+                </button>
+                <button id="privacy-tab" class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700">
+                    Privacy Policy
+                </button>
+            </nav>
+        </div>
+
+        <!-- Terms of Service Content -->
+        <div id="terms-content" class="prose max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Terms of Service</h2>
+            
+            <div class="space-y-8 text-gray-600 leading-relaxed">
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h3>
+                    <p>
+                        By accessing and using MashupkGrid Technologies Mall ("the Website"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">2. Description of Service</h3>
+                    <p>
+                        MashupkGrid Technologies Mall is an online marketplace that provides users with access to a wide variety of technology products including but not limited to laptops, mobile accessories, networking equipment, and electronic devices. We reserve the right to modify or discontinue the service at any time without notice.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">3. User Accounts</h3>
+                    <p>
+                        To access certain features of our service, you may be required to create an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">4. Product Information and Pricing</h3>
+                    <p>
+                        We strive to ensure that all product information and pricing on our website is accurate. However, we do not warrant that product descriptions, pricing, or other content is error-free. We reserve the right to correct any errors and to refuse or cancel any orders placed for products listed at an incorrect price.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">5. Orders and Payment</h3>
+                    <p>
+                        All orders are subject to acceptance and availability. We reserve the right to refuse any order. Payment must be made in full before shipment of products. We accept various payment methods including M-Pesa, credit cards, and cash on delivery where available.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">6. Shipping and Delivery</h3>
+                    <p>
+                        We will make reasonable efforts to deliver products within the estimated timeframes. However, delivery dates are estimates and we are not liable for any delays. Risk of loss and title for products pass to you upon delivery to the carrier.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">7. Returns and Refunds</h3>
+                    <p>
+                        We offer a 30-day return policy for unused products in their original packaging. Refunds will be processed within 3-5 business days after we receive the returned item. Shipping costs are non-refundable unless the return is due to our error.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">8. Warranties</h3>
+                    <p>
+                        All products come with manufacturer warranties. We also offer extended warranty options for additional protection. Warranty terms vary by product and manufacturer. Please refer to individual product pages for specific warranty information.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">9. Limitation of Liability</h3>
+                    <p>
+                        In no event shall MashupkGrid Technologies Mall be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or services, even if we have been advised of the possibility of such damages.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">10. Modifications to Terms</h3>
+                    <p>
+                        We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of the service after any changes constitutes acceptance of the new terms.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">11. Governing Law</h3>
+                    <p>
+                        These terms shall be governed by and construed in accordance with the laws of Kenya. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of Kenya.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">12. Contact Information</h3>
+                    <p>
+                        If you have any questions about these terms, please contact us at:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg mt-4">
+                        <p><strong>Email:</strong> legal@mashupkgrid.com</p>
+                        <p><strong>Phone:</strong> +254 700 000 000</p>
+                        <p><strong>Address:</strong> 123 Tech Hub Plaza, Westlands, Nairobi, Kenya</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Content -->
+        <div id="privacy-content" class="prose max-w-none hidden">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Privacy Policy</h2>
+            
+            <div class="space-y-8 text-gray-600 leading-relaxed">
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">1. Information We Collect</h3>
+                    <p>
+                        We collect information you provide directly to us, such as when you create an account, make a purchase, or contact us for support. This may include your name, email address, phone number, shipping address, and payment information.
+                    </p>
+                    <p class="mt-4">
+                        We also automatically collect certain information about your device and usage of our website, including IP address, browser type, operating system, and pages visited.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">2. How We Use Your Information</h3>
+                    <p>We use the information we collect to:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li>Process and fulfill your orders</li>
+                        <li>Communicate with you about your orders and account</li>
+                        <li>Provide customer support</li>
+                        <li>Send you marketing communications (with your consent)</li>
+                        <li>Improve our website and services</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">3. Information Sharing</h3>
+                    <p>
+                        We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share your information with:
+                    </p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li>Service providers who assist us in operating our website and conducting business</li>
+                        <li>Shipping and logistics partners for order fulfillment</li>
+                        <li>Payment processors for transaction processing</li>
+                        <li>Law enforcement or government agencies when required by law</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">4. Data Security</h3>
+                    <p>
+                        We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes SSL encryption for data transmission and secure storage of payment information.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">5. Cookies and Tracking</h3>
+                    <p>
+                        We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and personalize content. You can control cookie settings through your browser preferences.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">6. Data Retention</h3>
+                    <p>
+                        We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this policy, unless a longer retention period is required by law.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">7. Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2">
+                        <li>Access and update your personal information</li>
+                        <li>Request deletion of your personal information</li>
+                        <li>Opt-out of marketing communications</li>
+                        <li>Request a copy of your personal information</li>
+                        <li>Lodge a complaint with the relevant data protection authority</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">8. Third-Party Links</h3>
+                    <p>
+                        Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">9. Children's Privacy</h3>
+                    <p>
+                        Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">10. International Transfers</h3>
+                    <p>
+                        Your information may be transferred to and processed in countries other than Kenya. We ensure appropriate safeguards are in place to protect your information in accordance with this privacy policy.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">11. Updates to This Policy</h3>
+                    <p>
+                        We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on our website and updating the "Last updated" date.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">12. Contact Us</h3>
+                    <p>
+                        If you have any questions about this privacy policy or our data practices, please contact us at:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg mt-4">
+                        <p><strong>Email:</strong> privacy@mashupkgrid.com</p>
+                        <p><strong>Phone:</strong> +254 700 000 000</p>
+                        <p><strong>Address:</strong> 123 Tech Hub Plaza, Westlands, Nairobi, Kenya</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="border-t pt-4 mt-6">
+                <div class="flex justify-between text-xl font-bold mb-4">
+                    <span>Total: </span>
+                    <span id="cart-total">KSh 0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const termsTab = document.getElementById('terms-tab');
+            const privacyTab = document.getElementById('privacy-tab');
+            const termsContent = document.getElementById('terms-content');
+            const privacyContent = document.getElementById('privacy-content');
+
+            termsTab.addEventListener('click', function() {
+                // Update tabs
+                termsTab.classList.remove('border-transparent', 'text-gray-500');
+                termsTab.classList.add('border-primary', 'text-primary');
+                privacyTab.classList.remove('border-primary', 'text-primary');
+                privacyTab.classList.add('border-transparent', 'text-gray-500');
+
+                // Update content
+                termsContent.classList.remove('hidden');
+                privacyContent.classList.add('hidden');
+            });
+
+            privacyTab.addEventListener('click', function() {
+                // Update tabs
+                privacyTab.classList.remove('border-transparent', 'text-gray-500');
+                privacyTab.classList.add('border-primary', 'text-primary');
+                termsTab.classList.remove('border-primary', 'text-primary');
+                termsTab.classList.add('border-transparent', 'text-gray-500');
+
+                // Update content
+                privacyContent.classList.remove('hidden');
+                termsContent.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
